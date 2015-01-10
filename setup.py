@@ -2,6 +2,11 @@
 
 from distutils.core import setup, Extension
 
+smbus = Extension('smbus',
+                  include_dirs = ['.'],
+                  sources = ['smbusmodule.c', 'smbus.c']
+            )
+
 setup(	name="smbus",
 	version="1.1",
 	description="Python bindings for Linux SMBus access through i2c-dev",
@@ -11,4 +16,4 @@ setup(	name="smbus",
 	maintainer_email="linux-i2c@vger.kernel.org",
 	license="GPLv2",
 	url="http://lm-sensors.org/",
-	ext_modules=[Extension("smbus", ["smbusmodule.c"])])
+	ext_modules=[smbus])
