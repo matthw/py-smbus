@@ -1,6 +1,8 @@
 
 README: py-smbus
 
+It should now works on both python 2 and 3
+
 To build:
 	$ python setup.py build
 On most GNU/Linux distributions, you'll need to install the python-devel
