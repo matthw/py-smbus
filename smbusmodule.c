@@ -649,7 +649,7 @@ static PyGetSetDef SMBus_getset[] = {
 
 static PyTypeObject SMBus_type = {
 #if PY_MAJOR_VERSION >= 3
-    PyVarObject_HEAD_INIT(NULL, 0)
+	PyVarObject_HEAD_INIT(NULL, 0)
 #else
 	PyObject_HEAD_INIT(NULL)
 	0,				/* ob_size */
@@ -699,15 +699,15 @@ static PyMethodDef SMBus_module_methods[] = {
 
 #if PY_MAJOR_VERSION >= 3
 static struct PyModuleDef moduledef = {
-    PyModuleDef_HEAD_INIT,
-    "smbus",
-    SMBus_module_doc,
-    -1,
-    SMBus_module_methods,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
+	PyModuleDef_HEAD_INIT,
+	"smbus",
+	SMBus_module_doc,
+	-1,
+	SMBus_module_methods,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
 };
 #else
 #ifndef PyMODINIT_FUNC	/* declarations for DLL import/export */
@@ -726,13 +726,13 @@ initsmbus(void)
 
 	if (PyType_Ready(&SMBus_type) < 0)
 #if PY_MAJOR_VERSION >= 3
-        return NULL;
+		return NULL;
 #else
 		return;
 #endif
 
 #if PY_MAJOR_VERSION >= 3
-    m = PyModule_Create(&moduledef);
+	m = PyModule_Create(&moduledef);
 #else
 	m = Py_InitModule3("smbus", SMBus_module_methods, SMBus_module_doc);
 #endif
@@ -741,7 +741,7 @@ initsmbus(void)
 	PyModule_AddObject(m, "SMBus", (PyObject *)&SMBus_type);
 
 #if PY_MAJOR_VERSION >= 3
-    return m;
+	return m;
 #endif
 }
 
